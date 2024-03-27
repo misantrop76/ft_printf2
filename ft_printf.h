@@ -26,5 +26,7 @@ void	ft_hex(va_list list, int *nb, char maj);
 void	ft_char(va_list va, int *nb);
 void	ft_string(va_list va, int *nb);
 void	ft_int(va_list va, int *nb);
+void	ft_unsigned(va_list va , int *nb);
+void	ft_perc(int *nb);
 
 #endif

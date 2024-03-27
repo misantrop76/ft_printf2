@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-int		ft_search(int i, char j, va_list va, int *nb)
+int		ft_search(char j, va_list va, int *nb)
 {
 
 	if (!ft_strchr("pxXscdi%u", j))
-		return (i);
+		return (0);
 	if (j == 'p')
 		ft_pointer(va, nb);
 	else if (j == 'x' || j == 'X')
@@ -27,11 +27,11 @@ int		ft_search(int i, char j, va_list va, int *nb)
 		ft_char(va, nb);
 	else if (j == 'd' || j == 'i')
 		ft_int(va, nb);
-	/*else if (j == '%')
-		ft_pourc(va, nb);
 	else if (j == 'u')
-		ft_unsigned(va, nb);*/
-	return (i + 1);
+		ft_unsigned(va, nb);
+	else if (j == '%')
+		ft_perc(nb);
+	return (1);
 }
 
 int		ft_printf(const char *str, ...)
@@ -46,7 +46,7 @@ int		ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
-			i = ft_search(i, str[i + 1], va, &nb);
+			i += ft_search(str[i + 1], va, &nb);
 		else
 			nb += write(1, &str[i], 1);
 		i++;

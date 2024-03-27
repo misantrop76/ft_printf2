@@ -1,5 +1,10 @@
 #include "ft_printf.h"
 
+void	ft_perc(int *nb)
+{
+	*nb += write(1, "%", 1);
+}
+
 void	ft_string(va_list va, int *nb)
 {
 	char *str;

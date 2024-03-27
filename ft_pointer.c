@@ -58,10 +58,10 @@ char	*ft_upper(char *str)
 void	ft_hex(va_list list, int *nb, char maj)
 {
 	char *str;
-	unsigned long hey = (unsigned long)va_arg(list, long);
+	int hey = va_arg(list, int);
 
 	//printf("valeur = %lu\n", hey);
-	str = ft_convert(hey);
+	str = ft_convert((unsigned int)hey);
 
 	if (str == NULL)
 		*nb += write(1, "0", 1);

@@ -29,8 +29,8 @@ int main()
 	printf("|%d| ft_printf\n", ft_printf("%X char imprime:", __LONG_MAX__));
 	printf("|%d| printf\n\n", printf("%lX char imprime:", __LONG_MAX__));
 
-	printf("|%d| ft_printf\n", ft_printf("%X|%X|%X|%X|%X|%X|%x", 2147483647, -2147483648, 2147483647, -2147483648, 4294967295 , 0, -42));
-	printf("|%d| printf\n\n", printf("%X|%lX|%X|%lX|%lX|%X|%x", 2147483647, -2147483648, 2147483647, -2147483648, 4294967295 , 0, -42));
+	printf("|%d| ft_printf\n", ft_printf("%X|%X|%X|%X|%X|%X|%x", 2147483647, -2147483648, 2147483647, -2147483648, 6, 0, -42));
+	printf("|%d| printf\n\n", printf("%X|%X|%X|%X|%X|%X|%x", 2147483647, -2147483647, 2147483647, -2147483647, 6 , 0, -42));
 
 	printf("|%d| ft_printf\n", ft_printf("%x char imprime:", -42));
 	printf("|%d| printf\n\n", printf("%x char imprime:", -42));
@@ -59,4 +59,10 @@ int main()
 
 	printf("|%d| ft_printf\n", ft_printf("%d char imprime:", 2147483647));
 	printf("|%d| printf\n\n", printf("%d char imprime:", 2147483647));
+
+	printf("|%d| ft_printf\n", ft_printf("%u char imprime:", 2147483647));
+	printf("|%d| printf\n\n", printf("%u char imprime:", 2147483647));
+
+	printf("|%d| ft_printf\n", ft_printf("%d char imprime:", 21));
+	printf("|%d| printf\n\n", printf("%d char imprime:", 21));
 }
