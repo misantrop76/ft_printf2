@@ -12,7 +12,7 @@ int main()
 
 	printf("|%d| ft_printf\n", ft_printf("hey salut voila l'adress %p char imprime:", NULL));
 	printf("|%d| printf\n\n\n", printf("hey salut voila l'adress %p char imprime:", NULL));
-
+ 
 	printf("HEXA\n");
 	printf("|%d| ft_printf\n", ft_printf("%x char imprime:", 461864));
 	printf("|%d| printf\n\n", printf("%x char imprime:", 461864));

@@ -6,7 +6,7 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:52:49 by mminet            #+#    #+#             */
-/*   Updated: 2024/03/26 16:19:29 by mminet           ###   ########.fr       */
+/*   Updated: 2024/03/27 12:32:09 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	ft_hex(va_list list, int *nb, char maj)
 	char *str;
 	int hey = va_arg(list, int);
 
-	//printf("valeur = %lu\n", hey);
 	str = ft_convert((unsigned int)hey);
 
 	if (str == NULL)

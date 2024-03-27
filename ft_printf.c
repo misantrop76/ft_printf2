@@ -6,7 +6,7 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:41:44 by mminet            #+#    #+#             */
-/*   Updated: 2024/03/26 17:00:13 by mminet           ###   ########.fr       */
+/*   Updated: 2024/03/27 12:45:38 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_search(char j, va_list va, int *nb)
 	else if (j == 'd' || j == 'i')
 		ft_int(va, nb);
 	else if (j == 'u')
-		ft_unsigned(va, nb);
+		ft_unsigned(va_arg(va, unsigned int), nb);
 	else if (j == '%')
 		ft_perc(nb);
 	return (1);
