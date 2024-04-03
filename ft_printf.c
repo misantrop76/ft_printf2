@@ -6,15 +6,14 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:41:44 by mminet            #+#    #+#             */
-/*   Updated: 2024/03/27 12:45:38 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 14:42:42 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_search(char j, va_list va, int *nb)
+int	ft_search(char j, va_list va, int *nb)
 {
-
 	if (!ft_strchr("pxXscdi%u", j))
 		return (0);
 	if (j == 'p')
@@ -34,7 +33,7 @@ int		ft_search(char j, va_list va, int *nb)
 	return (1);
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	va;
 	int		i;
