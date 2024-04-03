@@ -6,11 +6,11 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:52:49 by mminet            #+#    #+#             */
-/*   Updated: 2024/04/03 14:42:04 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 15:31:05 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 char	*ft_convert(unsigned int nbr)
 {

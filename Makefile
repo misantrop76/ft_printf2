@@ -1,82 +1,93 @@
-SRCS = 	ft_atoi.c\
-		ft_bzero.c\
-		ft_calloc.c\
-		ft_isalnum.c\
-		ft_isalpha.c\
-		ft_isascii.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_itoa.c\
-		ft_memccpy.c\
-		ft_memchr.c\
-		ft_memcmp.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_memset.c\
-		ft_putchar_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
-		ft_putstr_fd.c\
-		ft_split.c\
-		ft_strchr.c\
-		ft_strdup.c\
-		ft_strjoin.c\
-		ft_strlcat.c\
-		ft_strlcpy.c\
-		ft_strlen.c\
-		ft_strmapi.c\
-		ft_strncmp.c\
-		ft_strnstr.c\
-		ft_strrchr.c\
-		ft_strtrim.c\
-		ft_substr.c\
-		ft_tolower.c\
-		ft_toupper.c\
-		ft_striteri.c\
+SRCS_L =	libft/ft_atoi.c\
+			libft/ft_bzero.c\
+			libft/ft_abs.c\
+			libft/ft_calloc.c\
+			libft/ft_isalnum.c\
+			libft/ft_isalpha.c\
+			libft/ft_isascii.c\
+			libft/ft_isdigit.c\
+			libft/ft_isprint.c\
+			libft/ft_itoa.c\
+			libft/ft_lstadd_back.c\
+			libft/ft_lstadd_front.c\
+			libft/ft_lstclear.c\
+			libft/ft_lstdelone.c\
+			libft/ft_lstiter.c\
+			libft/ft_lstlast.c\
+			libft/ft_lstmap.c\
+			libft/ft_lstnew.c\
+			libft/ft_lstsize.c\
+			libft/ft_memccpy.c\
+			libft/ft_memchr.c\
+			libft/ft_memcmp.c\
+			libft/ft_memcpy.c\
+			libft/ft_memmove.c\
+			libft/ft_memset.c\
+			libft/ft_putchar_fd.c\
+			libft/ft_putendl_fd.c\
+			libft/ft_putnbr_fd.c\
+			libft/ft_putstr_fd.c\
+			libft/ft_split.c\
+			libft/ft_strchr.c\
+			libft/ft_strdup.c\
+			libft/ft_striteri.c\
+			libft/ft_strjoin.c\
+			libft/ft_strlcat.c\
+			libft/ft_strlcpy.c\
+			libft/ft_strlen.c\
+			libft/ft_strmapi.c\
+			libft/ft_strncmp.c\
+			libft/ft_strnstr.c\
+			libft/ft_strrchr.c\
+			libft/ft_strtrim.c\
+			libft/ft_substr.c\
+			libft/ft_tolower.c\
+			libft/ft_toupper.c\
 
-SRCSB = ft_lstnew.c\
-		ft_lstadd_front.c\
-		ft_lstsize.c\
-		ft_lstlast.c\
-		ft_lstadd_back.c\
-		ft_lstdelone.c\
-		ft_lstclear.c\
-		ft_lstiter.c\
-		ft_lstmap.c\
+SRCS =		ft_int.c\
+			ft_pointer.c\
+			ft_printf.c\
+			ft_string.c\
 
-OBJSB = ${SRCSB:.c=.o}
+NAME = libftprintf.a
 
-HEADERS = libft.h
+LIBFT = ./libft/libft.a
 
-OBJS = ${SRCS:.c=.o}
+CC = gcc $(FLAGS)
 
-NAME = libft.a
+FLAGS = -Wall -Wextra -Werror
 
-CC = gcc -Wall -Wextra -Werror
+OBJ = $(patsubst %.c, obj/%.o, $(SRCS))
 
-RM = rm -f
+HEADER_LIB = libft/libft.h
+HEADER = libftprintf.h
 
-all: 		${NAME}
+all: $(NAME)
 
-bonus:		${OBJS} ${OBJSB}
-			ar rcs ${NAME} ${OBJS} ${OBJSB}
-			ranlib ${NAME}
+$(OBJ): $(HEADER_LIB) $(SRCS_L) $(HEADER)
 
-$(OBJS):	${HEADERS}
+$(NAME): $(LIBFT) $(OBJ)
+	cp $(LIBFT) $(NAME)
+	ar rcs ${NAME} $(OBJ)
+	ranlib ${NAME}
 
-$(NAME):	${OBJS}
-			ar rcs ${NAME} ${OBJS}
-			ranlib ${NAME}
+$(LIBFT): $(HEADER_LIB) $(SRCS_L)
+	@echo "\n==> Making LIBFT"
+	make -C ./libft
 
-%.c%.o:
-			${CC} -c $< -o ${<:.c=.o}
+obj/%.o: %.c
+	@mkdir -p obj
+	$(CC) -c $< -o $@
 
-fclean: 	clean
-			${RM} ${NAME}
+norme:
+	norminette *.c *.h
 
 clean:
-			${RM} ${OBJS} ${OBJSB}
+	rm -rf obj
+	make -C ./libft clean
 
-re:			fclean all
+fclean: clean
+	rm -rf $(NAME)
+	make -C ./libft fclean
 
-.PHONY:		all clean fclean re
+re: fclean all
