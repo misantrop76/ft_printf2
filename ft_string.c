@@ -6,11 +6,11 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:43:00 by mminet            #+#    #+#             */
-/*   Updated: 2024/04/03 15:31:30 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 16:01:22 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_perc(int *nb)
 {

@@ -60,7 +60,7 @@ FLAGS = -Wall -Wextra -Werror
 OBJ = $(patsubst %.c, obj/%.o, $(SRCS))
 
 HEADER_LIB = libft/libft.h
-HEADER = libftprintf.h
+HEADER = ft_printf.h
 
 all: $(NAME)
 

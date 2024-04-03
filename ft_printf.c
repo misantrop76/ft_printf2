@@ -6,11 +6,11 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:41:44 by mminet            #+#    #+#             */
-/*   Updated: 2024/04/03 15:31:21 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 16:01:11 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_search(char j, va_list va, int *nb)
 {

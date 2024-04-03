@@ -6,11 +6,11 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:44:11 by mminet            #+#    #+#             */
-/*   Updated: 2024/04/03 15:31:40 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 16:01:31 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	main()

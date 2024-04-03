@@ -6,11 +6,11 @@
 /*   By: mminet <mminet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:40:32 by mminet            #+#    #+#             */
-/*   Updated: 2024/04/03 15:30:54 by mminet           ###   ########.fr       */
+/*   Updated: 2024/04/03 16:00:53 by mminet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_int(va_list va, int *nb)
 {
